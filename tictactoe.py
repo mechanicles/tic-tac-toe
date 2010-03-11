@@ -68,8 +68,8 @@ def play(board,x,player):
 
 def checkPriority(a,b,c,board):
     if (board[a] == 'X' and board[b] == 'X') or (board[a] == 'O' and board[b] == 'O'):
-		if board[c] == ' ':
-		    return c
+	if board[c] == ' ':
+	    return c
     elif (board[a] == 'X' and board[c] == 'X') or (board[a] == 'O' and board[c] == 'O'):
     	if board[b] == ' ':
             return b
@@ -81,7 +81,7 @@ def checkPriority(a,b,c,board):
 def Priority(board):
 	y = checkPriority(0,1,2,board)
 	if y == None:
-		y = checkPriority(3,4,5,board)
+	    y = checkPriority(3,4,5,board)
 	if y == None:	
 	    y = checkPriority(6,7,8,board)
 	if y == None:
@@ -99,12 +99,11 @@ def Priority(board):
 	    return y
 	else:
 	    while True:
-			
-			x = random.randrange(0, 9)
-			if board[x] != 'X' and board[x] != 'O':
-				break
-			else:
-				continue
+	        x = random.randrange(0, 9)
+		if board[x] != 'X' and board[x] != 'O':
+		    break
+		else:
+		    continue
         return x
 
 for i in range(0,9):
@@ -120,13 +119,13 @@ for i in range(0,9):
         print "Machine >> Its your turn"
         displayPos()
         if i == 0:
-			x = random.randrange(0, 9)
-			if board[x] != 'X' and board[x] != 'O':
-				play(board,x,player)
+	    x = random.randrange(0, 9)
+	    if board[x] != 'X' and board[x] != 'O':
+	        play(board,x,player)
         
         else:
-			x = Priority(board)
-			play(board,x,player)
+	    x = Priority(board)
+	    play(board,x,player)
         
         displayBoard(board)
         print       #newline
@@ -134,8 +133,3 @@ for i in range(0,9):
 
 
 print "--Match Draw--"
-    
-
-
-
-
